@@ -14,3 +14,10 @@ print(list_of_cloud)
 
 list_of_cloud.insert(2, "alibaba")
 print(list_of_cloud)
+print(len(list_of_cloud))
+
+#insert "Hello cloud" to 0th index of list
+
+list_of_cloud.insert(0,"Hello cloud")
+print(list_of_cloud)
+
