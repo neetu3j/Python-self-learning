@@ -1,0 +1,28 @@
+"""
+this script is used to back up from local to AWS S3 bucket.
+boto3 is used to interact with AWS S3.
+"""
+
+import boto3
+
+s3 = boto3.resource("s3")
+def show_buckets(s3):
+    print(s3.buckets.all())  # List all buckets
+
+for bucket in s3.buckets.all():
+    print(bucket.name)  # Print each bucket's name
+
+
+def create_bucket(s3):
+    s3.create_bucket(Bucket="neetu-bucket-for-python",  # Create a new bucket
+        CreateBucketConfiguration={
+            'LocationConstraint': 'us-west-2'
+        },)
+print("Bucket created successfully.")
+
+
+create_bucket(s3)  # Call the function to create a bucket
+show_buckets(s3)  # Call the function to show all buckets
+
+
+   
